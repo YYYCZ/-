@@ -34,10 +34,11 @@ import urllib
 import execjs
 import requests
 from lxml import etree
+from random_user_agent import get_random_ua
 
 class BaiduTranslator:
-    #生成headers - 通用
-    __headers__ = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 Edg/94.0.992.50'}
+    #随机User-Agent的headers - 通用
+    __headers__ = {'User-Agent':get_random_ua()}
 
     #js文件的路径
     __js_file_path__ = 'sign.js'
@@ -243,7 +244,7 @@ class BaiduTranslator:
             res['to'] = self.getLanguage(res['to'])[1]
 
             #将翻译结果输出
-            res['trans_result'] = self.__res__['trans_result']['data'][0]['dst']
+            res['trans_result'] = '\n'.join(i['dst'] for i in self.__res__['trans_result']['data'])
 
             #输出词典（如果有的话）
             if 'dict_result' in self.__res__ and 'simple_means' in self.__res__['dict_result'] and 'symbols' in self.__res__['dict_result']['simple_means']:

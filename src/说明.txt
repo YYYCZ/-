@@ -7,3 +7,6 @@ python-3.9（直接在官网下载安装）
 1.execjs（按 win+R -> 输入 cmd 回车 -> 输入 pip install PyExceJS）
 2.requests（按 win+R -> 输入 cmd 回车 -> 输入 pip install requests）
 3.lxml（按 win+R -> 输入 cmd 回车 -> 输入 pip install lxml）
+4.easyocr（按 win+R -> 输入 cmd 回车 -> 输入 pip install easyocr）
+5.pywin32（按 win+R -> 输入 cmd 回车 -> 输入 pip install pywin32）
+6.opencv（按 win+R -> 输入 cmd 回车 -> 输入 pip install opencv-python）
